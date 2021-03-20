@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="External">
+      <UniqueIdentifier>{99734187-768a-4737-bdcb-f1e7ee99fd00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\glfw">
+      <UniqueIdentifier>{11e5a96e-00c2-4049-ac80-3038e9f7d8c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\glad">
+      <UniqueIdentifier>{7828c84e-f7f0-4491-9e17-1f495e6f0300}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gameStarter.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\src\GLFW\glfw3native.h">
+      <Filter>External\glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\src\GLFW\glfw3.h">
+      <Filter>External\glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\src\glad\glad.h">
+      <Filter>External\glad</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gameStarter.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\src\glad.c">
+      <Filter>External\glad</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
