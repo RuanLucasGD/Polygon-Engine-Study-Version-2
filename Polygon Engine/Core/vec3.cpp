@@ -124,3 +124,13 @@ void Vec3::operator /= (const float v) {
 	this->y /= v;
 	this->z /= v;
 }
+
+float Vec3::Magnetude(const Vec3& vec) {
+
+	float x = vec.x * vec.x;
+	float y = vec.y * vec.y;
+	float z = vec.z * vec.z;
+
+	float v = sqrtf(x + y + z);
+	return v;
+}
