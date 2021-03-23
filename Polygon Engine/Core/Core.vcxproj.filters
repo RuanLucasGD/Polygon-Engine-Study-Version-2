@@ -32,6 +32,9 @@
     <ClInclude Include="..\external\src\glad\glad.h">
       <Filter>External\glad</Filter>
     </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameStarter.cpp">
@@ -39,6 +42,9 @@
     </ClCompile>
     <ClCompile Include="..\external\src\glad.c">
       <Filter>External\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="vec3.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

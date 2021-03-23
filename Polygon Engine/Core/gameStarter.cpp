@@ -5,6 +5,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "vec3.h"
+
 void Create(const char* name, int width, int height) {
 
 	glfwInit();
@@ -16,6 +18,19 @@ void Create(const char* name, int width, int height) {
 
 	glfwMakeContextCurrent(window);
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
+	Vec3 vec1 = Vec3(1, 5, 1);
+	Vec3 vec2 = Vec3(1, 2, 1);
+
+	vec1 /= vec2;
+
+	//vec2 = vec1;
+
+	Vec3 v = vec1 + vec2;
+
+	std::cout << "x: " << vec1.x << std::endl;
+	std::cout << "y: " << vec1.y << std::endl;
+	std::cout << "z: " << vec1.z << std::endl;
 }
 
 void Loop() {
