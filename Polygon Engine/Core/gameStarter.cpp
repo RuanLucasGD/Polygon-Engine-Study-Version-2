@@ -19,8 +19,12 @@ void Create(const char* name, int width, int height) {
 	glfwMakeContextCurrent(window);
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 
-	Vec3 vec = Vec3(10, 4, -1);
-	std::cout << Vec3::Magnetude(vec) << std::endl;
+	Vec3 vec = Vec3(0.5f, 0.6f, -1);
+	Vec3 normalize = Vec3::Normalize(vec);
+
+	std::cout << normalize.x << std::endl;
+	std::cout << normalize.y << std::endl;
+	std::cout << normalize.z << std::endl;
 }
 
 void Loop() {

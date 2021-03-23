@@ -36,5 +36,7 @@ public:
 	void operator /= (const float v);
 
 	static float Magnetude(const Vec3& v);
+
+	static Vec3 Normalize(const Vec3& v);
 };
 

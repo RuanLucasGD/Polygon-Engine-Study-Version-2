@@ -134,3 +134,8 @@ float Vec3::Magnetude(const Vec3& vec) {
 	float v = sqrtf(x + y + z);
 	return v;
 }
+
+Vec3 Vec3::Normalize(const Vec3& v) {
+
+	return Vec3(v.x, v.y, v.z) / Magnetude(v);
+}
