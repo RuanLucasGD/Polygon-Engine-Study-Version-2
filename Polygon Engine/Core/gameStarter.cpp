@@ -18,16 +18,17 @@ void Create(const char* name, int width, int height) {
 
 	glfwMakeContextCurrent(window);
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-
-	Vec3 vec = Vec3(0.5f, 0.6f, -1);
-	Vec3 normalize = Vec3::Normalize(vec);
-
-	std::cout << normalize.x << std::endl;
-	std::cout << normalize.y << std::endl;
-	std::cout << normalize.z << std::endl;
 }
 
 void Loop() {
+
+	Vec3 vec1 = { 2, 2, 3 };
+	Vec3 vec2 = { 2, 2, 3 };
+	Vec3 vec3 = vec1 / 5.0f;
+
+	/*std::cout << vec3.x << std::endl;
+	std::cout << vec3.y << std::endl;
+	std::cout << vec3.z << std::endl;*/
 
 	while (!glfwWindowShouldClose(window))
 	{

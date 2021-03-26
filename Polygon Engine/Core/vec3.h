@@ -1,42 +1,29 @@
 #pragma once
 
-class Vec3
-{
-private:
+extern "C" {
 
-	Vec3 Sum(const Vec3& a, const Vec3& b);
-	Vec3 Subtract(const Vec3& a, const Vec3& b);
-	Vec3 Multiply(const Vec3& a, const Vec3& b);
-	Vec3 Divide(const Vec3& a, const Vec3& b);
+	struct Vec3 {
 
-public:
+		float x;
+		float y;
+		float z;
+	};
 
-	float x;
-	float y;
-	float z;
+	__declspec(dllexport) Vec3 Sum(const Vec3& a, const Vec3& b);
+	__declspec(dllexport) Vec3 Subtract(const Vec3& a, const Vec3& b);
+	__declspec(dllexport) Vec3 Multiply(const Vec3& a, const Vec3& b);
+	__declspec(dllexport) Vec3 Divide(const Vec3& a, const Vec3& b);
 
-	Vec3();
-	Vec3(float lenght);
-	Vec3(float x, float y, float z);
+	__declspec(dllexport) Vec3 MultiplyF(const Vec3& a, float v);
+	__declspec(dllexport) Vec3 DivideF(const Vec3& a, float v);
 
-	Vec3 operator + (const Vec3& b);
-	Vec3 operator - (const Vec3& b);
-	Vec3 operator * (const Vec3& b);
-	Vec3 operator / (const Vec3& b);
+	__declspec(dllexport) float Magnetude(Vec3 v);
+	__declspec(dllexport) Vec3 Normalize(Vec3 v);
+}
 
-	Vec3 operator * (const float v);
-	Vec3 operator / (const float v);
-
-	void operator += (const Vec3& b);
-	void operator -= (const Vec3& b);
-	void operator *= (const Vec3& b);
-	void operator /= (const Vec3& b);
-
-	void operator *= (const float v);
-	void operator /= (const float v);
-
-	static float Magnetude(const Vec3& v);
-
-	static Vec3 Normalize(const Vec3& v);
-};
-
+Vec3 operator - (const Vec3& a, const Vec3& b);
+Vec3 operator + (const Vec3& a, const Vec3& b);
+Vec3 operator * (const Vec3& a, const Vec3& b);
+Vec3 operator / (const Vec3& a, const Vec3& b);
+Vec3 operator * (const Vec3& a, float v);
+Vec3 operator / (const Vec3& a, float v);
