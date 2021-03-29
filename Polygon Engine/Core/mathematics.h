@@ -13,7 +13,7 @@ extern "C" {
 	__declspec (dllexport) float Cos(float r);
 	__declspec (dllexport) float Tan(float r);
 	__declspec (dllexport) float Asin(float r);
-	__declspec (dllexport) float Asos(float r);
+	__declspec (dllexport) float Acos(float r);
 	__declspec (dllexport) float Atan(float r);
 	__declspec (dllexport) float Lerp(float a, float b, float t);
 	__declspec (dllexport) float Min(float a, float b);

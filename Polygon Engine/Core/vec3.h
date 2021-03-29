@@ -17,8 +17,15 @@ extern "C" {
 	__declspec(dllexport) Vec3 MultiplyF(const Vec3& a, float v);
 	__declspec(dllexport) Vec3 DivideF(const Vec3& a, float v);
 
-	__declspec(dllexport) float Magnetude(Vec3 v);
-	__declspec(dllexport) Vec3 Normalize(Vec3 v);
+	//------------------------------------------------------------------
+
+	__declspec(dllexport) float VectorMagnetude(Vec3 v);
+	__declspec(dllexport) float VectorDot(Vec3 a, Vec3 b);
+	__declspec(dllexport) float VectorAngleBetween(Vec3 a, Vec3 b);
+
+	__declspec(dllexport) Vec3 VectorNormalize(Vec3 v);
+	__declspec(dllexport) Vec3 VectorCross(Vec3 a, Vec3 b);
+	__declspec(dllexport) Vec3 VectorLerp(Vec3 a, Vec3 b, float t);
 }
 
 Vec3 operator - (const Vec3& a, const Vec3& b);

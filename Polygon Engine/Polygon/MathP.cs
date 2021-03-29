@@ -17,7 +17,7 @@ namespace Polygon
         [DllImport(DLL_NAME)] public static extern float Cos(float r);
         [DllImport(DLL_NAME)] public static extern float Tan(float r);
         [DllImport(DLL_NAME)] public static extern float Asin(float r);
-        [DllImport(DLL_NAME)] public static extern float Asos(float r);
+        [DllImport(DLL_NAME)] public static extern float Acos(float r);
         [DllImport(DLL_NAME)] public static extern float Atan(float r);
 
         [DllImport(DLL_NAME)] public static extern float Lerp(float a, float b, float t);

@@ -41,7 +41,7 @@ float Asin(float r) {
 	return asinf(r);
 }
 
-float Asos(float r) {
+float Acos(float r) {
 
 	return acosf(r);
 }

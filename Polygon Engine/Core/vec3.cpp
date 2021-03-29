@@ -1,6 +1,6 @@
 #include "vec3.h"
 
-#include <math.h>
+#include "mathematics.h"
 
 Vec3 MultiplyF(const Vec3& a, float v) {
 
@@ -62,16 +62,53 @@ Vec3 DivideF(const Vec3& a, float v) {
 	};
 }
 
-float Magnetude(Vec3 v) {
+float VectorMagnetude(Vec3 v) {
 
 	float x = v.x * v.x;
 	float y = v.y * v.y;
 	float z = v.z * v.z;
 
-	return sqrtf(x + y + z);
+	return Sqrt(x + y + z);
 }
 
-Vec3 Normalize(Vec3 v) { return v / Magnetude(v); }
+Vec3 VectorNormalize(Vec3 v) {
+
+	return v / VectorMagnetude(v);
+}
+
+Vec3 VectorLerp(Vec3 a, Vec3 b, float t) {
+
+	return{
+
+		Lerp(a.x, b.x, t),
+		Lerp(a.y, b.y, t),
+		Lerp(a.z, b.z, t)
+	};
+}
+
+float VectorDot(Vec3 a, Vec3 b) {
+
+	float x = a.x * b.x;
+	float y = a.y * b.y;
+	float z = a.z * b.z;
+	return x + y + z;
+}
+
+float VectorAngleBetween(Vec3 a, Vec3 b) {
+
+	float angle = Acos(VectorDot(a, b));	// in radians
+	return RadToDegress(angle);
+}
+
+Vec3 VectorCross(Vec3 a, Vec3 b) {
+
+	return {
+
+		a.y * b.z - a.z * b.y,
+		a.z * b.x - a.x * b.z,
+		a.x * b.y - a.y * b.x
+	};
+}
 
 Vec3 operator + (const Vec3& a, const Vec3& b) { return Sum(a, b); }
 

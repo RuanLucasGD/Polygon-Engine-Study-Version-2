@@ -8,8 +8,6 @@ namespace ExampleGame
     {
         public static void Main()
         {
-            Console.WriteLine(MathP.Pow(10, 2));
-
             Game.Create("hello", 800, 600);
             Game.Loop();
             Game.Close();
