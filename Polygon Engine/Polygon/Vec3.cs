@@ -25,19 +25,11 @@ namespace Polygon
         }
 
         [DllImport(DLL_NAME)] private static extern float Magnetude(Vec3 v);
-
-
-
         [DllImport(DLL_NAME)] private static extern Vec3 Sum(Vec3 a, Vec3 b);
-
         [DllImport(DLL_NAME)] private static extern Vec3 Subtract(Vec3 a, Vec3 b);
-
         [DllImport(DLL_NAME)] private static extern Vec3 Multiply(Vec3 a, Vec3 b);
-
         [DllImport(DLL_NAME)] private static extern Vec3 Divide(Vec3 a, Vec3 b);
-
         [DllImport(DLL_NAME)] private static extern Vec3 MultiplyF(Vec3 a, float v);
-
         [DllImport(DLL_NAME)] private static extern Vec3 DivideF(Vec3 a, float v);
 
 

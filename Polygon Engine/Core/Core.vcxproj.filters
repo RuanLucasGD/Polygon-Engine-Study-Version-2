@@ -35,6 +35,9 @@
     <ClInclude Include="vec3.h">
       <Filter>Include</Filter>
     </ClInclude>
+    <ClInclude Include="mathematics.h">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameStarter.cpp">
@@ -44,6 +47,9 @@
       <Filter>External\glad</Filter>
     </ClCompile>
     <ClCompile Include="vec3.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="mathematics.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

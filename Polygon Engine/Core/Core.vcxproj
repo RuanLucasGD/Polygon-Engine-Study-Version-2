@@ -148,11 +148,13 @@
     <ClInclude Include="..\external\src\GLFW\glfw3.h" />
     <ClInclude Include="..\external\src\GLFW\glfw3native.h" />
     <ClInclude Include="gameStarter.h" />
+    <ClInclude Include="mathematics.h" />
     <ClInclude Include="vec3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\external\src\glad.c" />
     <ClCompile Include="gameStarter.cpp" />
+    <ClCompile Include="mathematics.cpp" />
     <ClCompile Include="vec3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

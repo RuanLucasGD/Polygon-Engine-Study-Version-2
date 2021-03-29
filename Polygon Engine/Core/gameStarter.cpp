@@ -5,6 +5,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "mathematics.h"
+
 #include "vec3.h"
 
 void Create(const char* name, int width, int height) {
@@ -21,14 +23,6 @@ void Create(const char* name, int width, int height) {
 }
 
 void Loop() {
-
-	Vec3 vec1 = { 2, 2, 3 };
-	Vec3 vec2 = { 2, 2, 3 };
-	Vec3 vec3 = vec1 / 5.0f;
-
-	/*std::cout << vec3.x << std::endl;
-	std::cout << vec3.y << std::endl;
-	std::cout << vec3.z << std::endl;*/
 
 	while (!glfwWindowShouldClose(window))
 	{
