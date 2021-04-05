@@ -2,7 +2,7 @@
 
 namespace Polygon
 {
-    public static class MathP
+    public static class Mathematics
     {
         private const string DLL_NAME = "Core.dll";
 
@@ -20,7 +20,7 @@ namespace Polygon
         [DllImport(DLL_NAME)] public static extern float Acos(float r);
         [DllImport(DLL_NAME)] public static extern float Atan(float r);
 
-        [DllImport(DLL_NAME)] public static extern float LerpF(float a, float b, float t);
+        [DllImport(DLL_NAME)] public static extern float Lerp(float a, float b, float t);
         [DllImport(DLL_NAME)] public static extern float Min(float a, float b);
         [DllImport(DLL_NAME)] public static extern float Max(float a, float b);
         [DllImport(DLL_NAME)] public static extern float Clamp(float v, float min, float max);
