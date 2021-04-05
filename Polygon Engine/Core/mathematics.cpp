@@ -2,78 +2,82 @@
 
 #include <math.h>
 
-float Sqrt(float v) {
+namespace math_p {
 
-	return sqrtf(v);
-}
-float RadToDegress(float r) {
 
-	return r * PI_RAD;
-}
+	float Sqrt(float v) {
 
-float DegressToRad(float d) {
+		return sqrtf(v);
+	}
+	float RadToDegress(float r) {
 
-	return d / PI_RAD;
-}
+		return r * PI_RAD;
+	}
 
-float Abs(float v) {
+	float DegressToRad(float d) {
 
-	return v > 0 ? v : v * -1;
-}
+		return d / PI_RAD;
+	}
 
-float Sin(float r) {
+	float Abs(float v) {
 
-	return sinf(r);
-}
+		return v > 0 ? v : v * -1;
+	}
 
-float Cos(float r) {
+	float Sin(float r) {
 
-	return cosf(r);
-}
+		return sinf(r);
+	}
 
-float Tan(float r) {
+	float Cos(float r) {
 
-	return tan(r);
-}
+		return cosf(r);
+	}
 
-float Asin(float r) {
+	float Tan(float r) {
 
-	return asinf(r);
-}
+		return tanf(r);
+	}
 
-float Acos(float r) {
+	float Asin(float r) {
 
-	return acosf(r);
-}
+		return asinf(r);
+	}
 
-float Atan(float r) {
+	float Acos(float r) {
 
-	return atan(r);
-}
+		return acosf(r);
+	}
 
-float Lerp(float a, float b, float t) {
+	float Atan(float r) {
 
-	return ((1 - t) * a) + (b * t);
-}
+		return atanf(r);
+	}
 
-float Min(float a, float b) {
+	float LerpF(float a, float b, float t) {
 
-	return a < b ? a : b;
-}
+		return ((1 - t) * a) + (b * t);
+	}
 
-float Max(float a, float b) {
+	float Min(float a, float b) {
 
-	return a > b ? a : b;
-}
+		return fminf(a, b);
+	}
 
-float Clamp(float v, float min, float max) {
+	float Max(float a, float b) {
 
-	if (v < min) v = min;
-	if (v > max) v = max;
-	return v;
-}
+		return fmaxf(a, b);
+	}
 
-float Pow(float a, float p) {
+	float Clamp(float v, float min, float max) {
 
-	return pow(a, p);
+		if (v < min) v = min;
+		if (v > max) v = max;
+		return v;
+	}
+
+	float Pow(float a, float p) {
+
+		return powf(a, p);
+	}
 }

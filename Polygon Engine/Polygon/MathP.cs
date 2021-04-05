@@ -20,10 +20,10 @@ namespace Polygon
         [DllImport(DLL_NAME)] public static extern float Acos(float r);
         [DllImport(DLL_NAME)] public static extern float Atan(float r);
 
-        [DllImport(DLL_NAME)] public static extern float Lerp(float a, float b, float t);
+        [DllImport(DLL_NAME)] public static extern float LerpF(float a, float b, float t);
         [DllImport(DLL_NAME)] public static extern float Min(float a, float b);
         [DllImport(DLL_NAME)] public static extern float Max(float a, float b);
         [DllImport(DLL_NAME)] public static extern float Clamp(float v, float min, float max);
-        [DllImport(DLL_NAME)] public static extern float Pow(float v, float p);
+        [DllImport(DLL_NAME)] public static extern float Pow(float v, float p = 2);
     }
 }

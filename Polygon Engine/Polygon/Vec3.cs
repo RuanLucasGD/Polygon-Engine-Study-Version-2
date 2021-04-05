@@ -24,7 +24,7 @@ namespace Polygon
             this.z = z;
         }
 
-        [DllImport(DLL_NAME)] private static extern float VectorMagnetude(Vec3 v);
+        [DllImport(DLL_NAME)] private static extern float Magnetude(Vec3 v);
         [DllImport(DLL_NAME)] private static extern Vec3 Sum(Vec3 a, Vec3 b);
         [DllImport(DLL_NAME)] private static extern Vec3 Subtract(Vec3 a, Vec3 b);
         [DllImport(DLL_NAME)] private static extern Vec3 Multiply(Vec3 a, Vec3 b);
@@ -33,14 +33,16 @@ namespace Polygon
         [DllImport(DLL_NAME)] private static extern Vec3 DivideF(Vec3 a, float v);
 
 
-        public float Lenght { get { return VectorMagnetude(this); } }
+        public float Lenght { get { return Magnetude(this); } }
 
 
-        [DllImport(DLL_NAME)] public static extern float VectorDot(Vec3 a, Vec3 b);
-        [DllImport(DLL_NAME)] public static extern float VectorAngleBetween(Vec3 a, Vec3 b);
-        [DllImport(DLL_NAME)] public static extern Vec3 VectorNormalize(Vec3 v);
-        [DllImport(DLL_NAME)] public static extern Vec3 VectorCross(Vec3 a, Vec3 b);
-        [DllImport(DLL_NAME)] public static extern Vec3 VectorLerp(Vec3 a, Vec3 b, float t);
+        [DllImport(DLL_NAME)] public static extern float Dot(Vec3 a, Vec3 b);
+        [DllImport(DLL_NAME)] public static extern float AngleBetween(Vec3 a, Vec3 b);
+        [DllImport(DLL_NAME)] public static extern float Distance(Vec3 a, Vec3 b);
+
+        [DllImport(DLL_NAME)] public static extern Vec3 Normalize(Vec3 v);
+        [DllImport(DLL_NAME)] public static extern Vec3 Cross(Vec3 a, Vec3 b);
+        [DllImport(DLL_NAME)] public static extern Vec3 Lerp(Vec3 a, Vec3 b, float t);
 
         public static Vec3 operator +(Vec3 a, Vec3 b) { return Sum(a, b); }
 
