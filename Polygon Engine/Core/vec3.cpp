@@ -2,17 +2,7 @@
 
 #include "mathematics.h"
 
-Vec3 Vec3MultiplyF(const Vec3& a, float v) {
-
-	return {
-
-		a.x * v,
-		a.y * v,
-		a.z * v
-	};
-}
-
-Vec3 Vec3Sum(const Vec3& a, const Vec3& b) {
+Vec3 Vec3Sum(Vec3 a, Vec3 b) {
 
 	return {
 
@@ -22,7 +12,7 @@ Vec3 Vec3Sum(const Vec3& a, const Vec3& b) {
 	};
 }
 
-Vec3 Vec3Subtract(const Vec3& a, const Vec3& b) {
+Vec3 Vec3Subtract(Vec3 a, Vec3 b) {
 
 	return {
 
@@ -32,7 +22,7 @@ Vec3 Vec3Subtract(const Vec3& a, const Vec3& b) {
 	};
 }
 
-Vec3 Vec3Multiply(const Vec3& a, const Vec3& b) {
+Vec3 Vec3Multiply(Vec3 a, Vec3 b) {
 
 	return {
 
@@ -42,7 +32,7 @@ Vec3 Vec3Multiply(const Vec3& a, const Vec3& b) {
 	};
 }
 
-Vec3 Vec3Divide(const Vec3& a, const Vec3& b) {
+Vec3 Vec3Divide(Vec3 a, Vec3 b) {
 
 	return {
 
@@ -52,7 +42,17 @@ Vec3 Vec3Divide(const Vec3& a, const Vec3& b) {
 	};
 }
 
-Vec3 Vec3DivideF(const Vec3& a, float v) {
+Vec3 Vec3MultiplyF(Vec3 a, float v) {
+
+	return {
+
+		a.x * v,
+		a.y * v,
+		a.z * v
+	};
+}
+
+Vec3 Vec3DivideF(Vec3 a, float v) {
 
 	return {
 
@@ -122,14 +122,14 @@ Vec3 Vec3Cross(Vec3 a, Vec3 b) {
 	};
 }
 
-Vec3 operator + (const Vec3& a, const Vec3& b) { return Vec3Sum(a, b); }
+Vec3 operator + (Vec3 a, Vec3 b) { return Vec3Sum(a, b); }
 
-Vec3 operator - (const Vec3& a, const Vec3& b) { return Vec3Subtract(a, b); }
+Vec3 operator - (Vec3 a, Vec3 b) { return Vec3Subtract(a, b); }
 
-Vec3 operator * (const Vec3& a, const Vec3& b) { return Vec3Multiply(a, b); }
+Vec3 operator * (Vec3 a, Vec3 b) { return Vec3Multiply(a, b); }
 
-Vec3 operator / (const Vec3& a, const Vec3& b) { return Vec3Divide(a, b); }
+Vec3 operator / (Vec3 a, Vec3 b) { return Vec3Divide(a, b); }
 
-Vec3 operator * (const Vec3& a, float v) { return Vec3MultiplyF(a, v); }
+Vec3 operator * (Vec3 a, float v) { return Vec3MultiplyF(a, v); }
 
-Vec3 operator / (const Vec3& a, float v) { return Vec3DivideF(a, v); }
+Vec3 operator / (Vec3 a, float v) { return Vec3DivideF(a, v); }

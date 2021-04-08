@@ -24,10 +24,12 @@ void Create(const char* name, int width, int height) {
 
 void Loop() {
 
-	Vec3 a = { 1, 1, 1 };
-	Vec3 b = a + a;
+	Vec3 a = { 5, 1 };
+	Vec3 b = { 2, 5 };
+	Vec3 c = a + b;
 
-	//std::cout << vec3::Vec3AngleBetween({ 0.4, 1, 0.2 }, { 0.1, 1, -1 }) << std::endl;
+	//std::cout << c.x << std::endl;
+	//std::cout << c.y << std::endl;
 
 	while (!glfwWindowShouldClose(window))
 	{

@@ -1,6 +1,5 @@
 #pragma once
 
-
 extern "C" {
 
 	struct Vec3 {
@@ -10,13 +9,13 @@ extern "C" {
 		float z;
 	};
 
-	__declspec(dllexport) Vec3 Vec3Sum(const Vec3& a, const Vec3& b);
-	__declspec(dllexport) Vec3 Vec3Subtract(const Vec3& a, const Vec3& b);
-	__declspec(dllexport) Vec3 Vec3Multiply(const Vec3& a, const Vec3& b);
-	__declspec(dllexport) Vec3 Vec3Divide(const Vec3& a, const Vec3& b);
+	__declspec(dllexport) Vec3 Vec3Sum(Vec3 a, Vec3 b);
+	__declspec(dllexport) Vec3 Vec3Subtract(Vec3 a, const Vec3 b);
+	__declspec(dllexport) Vec3 Vec3Multiply(Vec3 a, const Vec3 b);
+	__declspec(dllexport) Vec3 Vec3Divide(Vec3 a, const Vec3 b);
 
-	__declspec(dllexport) Vec3 Vec3MultiplyF(const Vec3& a, float v);
-	__declspec(dllexport) Vec3 Vec3DivideF(const Vec3& a, float v);
+	__declspec(dllexport) Vec3 Vec3MultiplyF(const Vec3 a, float v);
+	__declspec(dllexport) Vec3 Vec3DivideF(const Vec3 a, float v);
 
 	//------------------------------------------------------------------
 
@@ -30,9 +29,9 @@ extern "C" {
 	__declspec(dllexport) Vec3 Vec3Lerp(Vec3 a, Vec3 b, float t);
 }
 
-Vec3 operator - (const Vec3& a, const Vec3& b);
-Vec3 operator + (const Vec3& a, const Vec3& b);
-Vec3 operator * (const Vec3& a, const Vec3& b);
-Vec3 operator / (const Vec3& a, const Vec3& b);
-Vec3 operator * (const Vec3& a, float v);
-Vec3 operator / (const Vec3& a, float v);
+Vec3 operator - (Vec3 a, Vec3 b);
+Vec3 operator + (Vec3 a, Vec3 b);
+Vec3 operator * (Vec3 a, Vec3 b);
+Vec3 operator / (Vec3 a, Vec3 b);
+Vec3 operator * (Vec3 a, float v);
+Vec3 operator / (Vec3 a, float v);

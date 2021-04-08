@@ -8,10 +8,15 @@ namespace ExampleGame
     {
         public static void Main()
         {
-            Vec3 a = new Vec3(5, -10, 2);
-            Vec3 b = new Vec3(-2, 1, 5);
+            Vec2 a = new Vec2(-10);
+            a.x = 2;
+            a.y = 2;
 
-            Console.WriteLine(b);
+            Vec2 b = new Vec2(2);
+
+            Console.WriteLine(b.x);
+            Console.WriteLine(b.y);
+            //Console.WriteLine(c);
 
             Game.Create("hello", 800, 600);
             Game.Loop();
