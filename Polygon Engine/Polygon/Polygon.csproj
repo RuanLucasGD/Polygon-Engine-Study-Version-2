@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mat2.cs" />
     <Compile Include="Vec4.cs" />
     <Compile Include="Vec2.cs" />
     <Compile Include="Mathematics.cs" />

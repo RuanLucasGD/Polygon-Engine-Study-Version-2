@@ -21,12 +21,12 @@ namespace Polygon
             this.y = y;
         }
 
-        [DllImport(DLL_NAME, EntryPoint = "Vec2Sum")] public extern static Vec2 Sum(Vec2 a, Vec2 b);
-        [DllImport(DLL_NAME, EntryPoint = "Vec2Subtract")] public extern static Vec2 Subtract(Vec2 a, Vec2 b);
-        [DllImport(DLL_NAME, EntryPoint = "Vec2Multiply")] public extern static Vec2 Multiply(Vec2 a, Vec2 b);
-        [DllImport(DLL_NAME, EntryPoint = "Vec2Divide")] public extern static Vec2 Divide(Vec2 a, Vec2 b);
-        [DllImport(DLL_NAME, EntryPoint = "Vec2MultiplyF")] public extern static Vec2 Multiply(Vec2 a, float v);
-        [DllImport(DLL_NAME, EntryPoint = "Vec2DivideF")] public extern static Vec2 Divide(Vec2 a, float v);
+        [DllImport(DLL_NAME, EntryPoint = "Vec2Sum")] private extern static Vec2 Sum(Vec2 a, Vec2 b);
+        [DllImport(DLL_NAME, EntryPoint = "Vec2Subtract")] private extern static Vec2 Subtract(Vec2 a, Vec2 b);
+        [DllImport(DLL_NAME, EntryPoint = "Vec2Multiply")] private extern static Vec2 Multiply(Vec2 a, Vec2 b);
+        [DllImport(DLL_NAME, EntryPoint = "Vec2Divide")] private extern static Vec2 Divide(Vec2 a, Vec2 b);
+        [DllImport(DLL_NAME, EntryPoint = "Vec2MultiplyF")] private extern static Vec2 Multiply(Vec2 a, float v);
+        [DllImport(DLL_NAME, EntryPoint = "Vec2DivideF")] private extern static Vec2 Divide(Vec2 a, float v);
 
         [DllImport(DLL_NAME, EntryPoint = "Vec2Magnetude")] public extern static float Magnetude(Vec2 v);
         [DllImport(DLL_NAME, EntryPoint = "Vec2Dot")] public extern static float Dot(Vec2 a, Vec2 b);
