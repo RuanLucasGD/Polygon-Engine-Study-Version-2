@@ -41,6 +41,9 @@
     <ClInclude Include="vec2.h">
       <Filter>Include</Filter>
     </ClInclude>
+    <ClInclude Include="vec4.h">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameStarter.cpp">
@@ -56,6 +59,9 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="vec2.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="vec4.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

@@ -7,7 +7,7 @@
 
 #include "mathematics.h"
 
-#include "vec3.h"
+#include "vec4.h"
 
 void Create(const char* name, int width, int height) {
 
@@ -24,9 +24,15 @@ void Create(const char* name, int width, int height) {
 
 void Loop() {
 
-	Vec3 a = { 5, 1 };
+	/*Vec3 a = { 5, 1 };
 	Vec3 b = { 2, 5 };
-	Vec3 c = a + b;
+	Vec3 c = a + b;*/
+
+	/*std::cout << Vec4Normalize({ 4, 5, 1, 4 }).x << std::endl;
+	std::cout << Vec4Normalize({ 4, 5, 1, 4 }).y << std::endl;
+	std::cout << Vec4Normalize({ 4, 5, 1, 4 }).z << std::endl;
+	std::cout << Vec4Normalize({ 4, 5, 1, 4 }).w << std::endl;*/
+
 
 	//std::cout << c.x << std::endl;
 	//std::cout << c.y << std::endl;

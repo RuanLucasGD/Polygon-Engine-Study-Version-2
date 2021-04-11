@@ -32,7 +32,6 @@ namespace Polygon
         [DllImport(DLL_NAME, EntryPoint = "Vec3MultiplyF")] private static extern Vec3 MultiplyF(Vec3 a, float v);
         [DllImport(DLL_NAME, EntryPoint = "Vec3DivideF")] private static extern Vec3 DivideF(Vec3 a, float v);
 
-
         public float Lenght { get { return Magnetude(this); } }
 
 
