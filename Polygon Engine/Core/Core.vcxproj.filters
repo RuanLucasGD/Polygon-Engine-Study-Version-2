@@ -18,6 +18,12 @@
     <Filter Include="External\glad">
       <UniqueIdentifier>{7828c84e-f7f0-4491-9e17-1f495e6f0300}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\math">
+      <UniqueIdentifier>{b3555367-7783-4771-b865-2ac062ec53f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\math">
+      <UniqueIdentifier>{51334752-1aea-4fe5-ae59-2b0151d64dfa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gameStarter.h">
@@ -32,20 +38,23 @@
     <ClInclude Include="..\external\src\glad\glad.h">
       <Filter>External\glad</Filter>
     </ClInclude>
-    <ClInclude Include="vec3.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="mathematics.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="vec2.h">
-      <Filter>Include</Filter>
-    </ClInclude>
     <ClInclude Include="vec4.h">
-      <Filter>Include</Filter>
+      <Filter>Include\math</Filter>
     </ClInclude>
     <ClInclude Include="mat2.h">
-      <Filter>Include</Filter>
+      <Filter>Include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="mat3.h">
+      <Filter>Include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="mathematics.h">
+      <Filter>Include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2.h">
+      <Filter>Include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>Include\math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -55,20 +64,23 @@
     <ClCompile Include="..\external\src\glad.c">
       <Filter>External\glad</Filter>
     </ClCompile>
-    <ClCompile Include="vec3.cpp">
-      <Filter>Source</Filter>
+    <ClCompile Include="mat2.cpp">
+      <Filter>Source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="mat3.cpp">
+      <Filter>Source\math</Filter>
     </ClCompile>
     <ClCompile Include="mathematics.cpp">
-      <Filter>Source</Filter>
+      <Filter>Source\math</Filter>
     </ClCompile>
     <ClCompile Include="vec2.cpp">
-      <Filter>Source</Filter>
+      <Filter>Source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="vec3.cpp">
+      <Filter>Source\math</Filter>
     </ClCompile>
     <ClCompile Include="vec4.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="mat2.cpp">
-      <Filter>Source</Filter>
+      <Filter>Source\math</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

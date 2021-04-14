@@ -7,7 +7,7 @@
 
 #include "mathematics.h"
 
-#include "mat2.h"
+#include "mat3.h"
 
 void Create(const char* name, int width, int height) {
 
@@ -24,15 +24,25 @@ void Create(const char* name, int width, int height) {
 
 void Loop() {
 
-	Mat2 m = { 1, 2, 3, 4 };
-	Mat2 m2 = { 5, 6, 7, 8 };
+	Mat3 m = {
 
-	Mat2 m3 = m * 5;
+		5, 8, -3,
+		4, 1, 4,
+		7, 5, 1
+	};
 
-	/*std::cout << m3.x1 << std::endl;
-	std::cout << m3.y1 << std::endl;
-	std::cout << m3.x2 << std::endl;
-	std::cout << m3.y2 << std::endl;*/
+	Mat3 m2 = {
+
+		3, 40, 3,
+		2, 20, 5,
+		10, -10, 3
+	};
+
+	Mat3 m3 = m * 5;
+
+	/*std::cout << m3.x1 << "   " << m3.y1 << "   " << m3.z1 << std::endl;
+	std::cout << m3.x2 << "   " << m3.y2 << "   " << m3.z2 << std::endl;
+	std::cout << m3.x3 << "   " << m3.y3 << "   " << m3.z3 << std::endl;*/
 
 	while (!glfwWindowShouldClose(window))
 	{

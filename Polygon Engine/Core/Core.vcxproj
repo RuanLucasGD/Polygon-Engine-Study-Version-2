@@ -149,6 +149,7 @@
     <ClInclude Include="..\external\src\GLFW\glfw3native.h" />
     <ClInclude Include="gameStarter.h" />
     <ClInclude Include="mat2.h" />
+    <ClInclude Include="mat3.h" />
     <ClInclude Include="mathematics.h" />
     <ClInclude Include="vec2.h" />
     <ClInclude Include="vec3.h" />
@@ -158,6 +159,7 @@
     <ClCompile Include="..\external\src\glad.c" />
     <ClCompile Include="gameStarter.cpp" />
     <ClCompile Include="mat2.cpp" />
+    <ClCompile Include="mat3.cpp" />
     <ClCompile Include="mathematics.cpp" />
     <ClCompile Include="vec2.cpp" />
     <ClCompile Include="vec3.cpp" />
