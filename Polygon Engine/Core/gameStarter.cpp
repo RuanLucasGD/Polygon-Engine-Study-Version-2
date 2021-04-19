@@ -7,7 +7,52 @@
 
 #include "mathematics.h"
 
+#include "mat2.h"
+#include "mat4.h"
 #include "mat3.h"
+
+#include <vector>
+
+
+// codigo do script do vertex shader
+const char* vertexShaderSource = R"(
+	
+	#version 330 core
+
+	uniform mat4 model;
+
+	layout (location = 0) in vec3 pos; 
+
+	void main(){
+		
+		gl_Position  = model * vec4(pos, 1.0f);
+	}
+										)";
+
+// codigo do script de fragment shader
+const char* fragmentShaderSource = R"(
+	
+	#version 330 core
+
+	out vec4 color;
+
+	void main(){
+		
+		color = vec4(1, 0, 0, 1);
+	}
+										)";
+
+float vertices[] = {
+		-0.5f, -0.5f, 0.0f, // left  
+		 0.5f, -0.5f, 0.0f, // right 
+		 0.0f,  0.5f, 0.0f  // top   
+};
+
+int indices[] = {
+
+	0, 1, 2
+};
+
 
 void Create(const char* name, int width, int height) {
 
@@ -24,30 +69,100 @@ void Create(const char* name, int width, int height) {
 
 void Loop() {
 
-	Mat3 m = {
+	// creating shader program
 
-		5, 8, -3,
-		4, 1, 4,
-		7, 5, 1
+	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+
+	glShaderSource(vertexShader, 1, &vertexShaderSource, nullptr);
+	glShaderSource(fragmentShader, 1, &fragmentShaderSource, nullptr);
+
+	glCompileShader(vertexShader);
+	glCompileShader(fragmentShader);
+
+	unsigned int shaderProgram = glCreateProgram();
+	glAttachShader(shaderProgram, vertexShader);
+	glAttachShader(shaderProgram, fragmentShader);
+	glLinkProgram(shaderProgram);
+
+	int success;
+
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+
+	if (!success) {
+
+		char error[512];
+
+		glGetShaderInfoLog(vertexShader, 512, nullptr, error);
+		std::cout << error << std::endl;
+	}
+
+	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+
+	if (!success) {
+
+		char error[512];
+
+		glGetShaderInfoLog(fragmentShader, 512, nullptr, error);
+		std::cout << error << std::endl;
+	}
+
+	glGetShaderiv(shaderProgram, GL_LINK_STATUS, &success);
+
+	if (!success) {
+
+		char error[512];
+
+		glGetShaderInfoLog(shaderProgram, 512, nullptr, error);
+		std::cout << error << std::endl;
+	}
+
+	// create triangle model
+
+	unsigned int vbo;
+	unsigned int vao;
+	unsigned int ebo;
+
+	glGenBuffers(1, &vbo);
+	glGenBuffers(1, &ebo);
+	glGenVertexArrays(1, &vao);
+
+	glBindVertexArray(vao);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);
+
+	std::vector<float> model = {
+
+		1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1
 	};
 
-	Mat3 m2 = {
+	glUseProgram(shaderProgram);
 
-		3, 40, 3,
-		2, 20, 5,
-		10, -10, 3
-	};
+	int loc = glGetUniformLocation(shaderProgram, "model");
+	glUniformMatrix4fv(loc, 1, GL_FALSE, Mat4Data(mat4Identity).data());
 
-	Mat3 m3 = m * 5;
-
-	/*std::cout << m3.x1 << "   " << m3.y1 << "   " << m3.z1 << std::endl;
-	std::cout << m3.x2 << "   " << m3.y2 << "   " << m3.z2 << std::endl;
-	std::cout << m3.x3 << "   " << m3.y3 << "   " << m3.z3 << std::endl;*/
+	glEnableVertexAttribArray(0);
 
 	while (!glfwWindowShouldClose(window))
 	{
-		glClearColor(0.3, 0.3, 0.8, 1);
+		glClearColor(0.1, 0.1, 0.3, 1);
 		glClear(GL_COLOR_BUFFER_BIT);
+
+
+		// rendering triangle
+
+		glUseProgram(shaderProgram);
+		glBindVertexArray(vao);
+		//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

@@ -56,6 +56,9 @@
     <ClInclude Include="vec3.h">
       <Filter>Include\math</Filter>
     </ClInclude>
+    <ClInclude Include="mat4.h">
+      <Filter>Include\math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameStarter.cpp">
@@ -80,6 +83,9 @@
       <Filter>Source\math</Filter>
     </ClCompile>
     <ClCompile Include="vec4.cpp">
+      <Filter>Source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="mat4.cpp">
       <Filter>Source\math</Filter>
     </ClCompile>
   </ItemGroup>

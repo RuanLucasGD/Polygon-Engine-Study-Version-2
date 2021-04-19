@@ -54,3 +54,4 @@ Mat2 operator - (Mat2 a, Mat2 b) { return Mat2Subtract(a, b); }
 Mat2 operator * (Mat2 a, Mat2 b) { return Mat2Multiply(a, b); }
 
 Mat2 operator * (Mat2 a, float v) { return Mat2MultiplyF(a, v); }
+
